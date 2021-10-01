@@ -1,0 +1,349 @@
+{
+  "name": "OAuth 1.0 HMAC",
+  "description": "An extension to hook oauth hmac to http extension connectors.",
+  "version": "1.1.0",
+  "vendor": "Mulesoft",
+  "category": "COMMUNITY",
+  "xmlDsl": {
+    "prefix": "oauth-hmac",
+    "namespace": "http://www.mulesoft.org/schema/mule/oauth-hmac",
+    "schemaLocation": "http://www.mulesoft.org/schema/mule/oauth-hmac/current/mule-oauth-hmac.xsd",
+    "schemaVersion": "1.1.0",
+    "xsdFileName": "mule-oauth-hmac.xsd"
+  },
+  "resources": [],
+  "subTypes": [
+    {
+      "baseType": {
+        "format": "java",
+        "type": "@ref:org.mule.extension.http.api.request.authentication.HttpRequestAuthentication"
+      },
+      "subTypes": [
+        {
+          "format": "java",
+          "type": "@ref:org.mule.extension.oauthhmac.api.OAuthHMAC"
+        }
+      ]
+    }
+  ],
+  "privilegedPackages": [],
+  "privilegedArtifacts": [],
+  "externalLibraries": [],
+  "importedTypes": [
+    {
+      "format": "java",
+      "type": "Object",
+      "annotations": {
+        "typeId": "org.mule.extension.http.api.request.authentication.HttpRequestAuthentication",
+        "classInformation": {
+          "classname": "org.mule.extension.http.api.request.authentication.HttpRequestAuthentication",
+          "hasDefaultConstructor": false,
+          "isInterface": true,
+          "isInstantiable": false,
+          "isAbstract": true,
+          "isFinal": false,
+          "implementedInterfaces": [],
+          "parent": "",
+          "genericTypes": [],
+          "isMap": false
+        },
+        "typeAlias": {
+          "value": "HttpRequestAuthentication"
+        }
+      },
+      "fields": []
+    },
+    {
+      "format": "java",
+      "type": "Object",
+      "annotations": {
+        "typeId": "org.mule.extension.http.api.request.proxy.HttpProxyConfig",
+        "classInformation": {
+          "classname": "org.mule.extension.http.api.request.proxy.HttpProxyConfig",
+          "hasDefaultConstructor": false,
+          "isInterface": true,
+          "isInstantiable": false,
+          "isAbstract": true,
+          "isFinal": false,
+          "implementedInterfaces": [
+            "org.mule.runtime.http.api.client.proxy.ProxyConfig"
+          ],
+          "parent": "",
+          "genericTypes": [],
+          "isMap": false
+        },
+        "typeAlias": {
+          "value": "HttpProxyConfig"
+        }
+      },
+      "fields": []
+    }
+  ],
+  "configurations": [
+    {
+      "stereotype": {
+        "type": "CONFIG",
+        "namespace": "OAUTH-HMAC",
+        "parent": {
+          "type": "MODULE_CONFIG",
+          "namespace": "MULE"
+        }
+      },
+      "parameterGroupModels": [],
+      "externalLibraryModels": [],
+      "operations": [],
+      "connectionProviders": [],
+      "messageSources": [],
+      "name": "config",
+      "description": "Default configuration",
+      "modelProperties": {}
+    }
+  ],
+  "operations": [],
+  "functions": [],
+  "constructs": [],
+  "connectionProviders": [],
+  "messageSources": [],
+  "notifications": [],
+  "errors": [
+    {
+      "error": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "OAUTH-HMAC:RETRY_EXHAUSTED",
+      "parent": "MULE:RETRY_EXHAUSTED",
+      "handleable": true
+    },
+    {
+      "error": "MULE:RETRY_EXHAUSTED",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "OAUTH-HMAC:CONNECTIVITY",
+      "parent": "MULE:CONNECTIVITY",
+      "handleable": true
+    },
+    {
+      "error": "MULE:CONNECTIVITY",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "OAUTH-HMAC:TOKEN_NOT_FOUND",
+      "parent": "OAUTH-HMAC:OAUTH_CLIENT_SECURITY",
+      "handleable": true
+    },
+    {
+      "error": "OAUTH-HMAC:OAUTH_CLIENT_SECURITY",
+      "parent": "OAUTH-HMAC:CLIENT_SECURITY",
+      "handleable": true
+    },
+    {
+      "error": "OAUTH-HMAC:CLIENT_SECURITY",
+      "parent": "MULE:CLIENT_SECURITY",
+      "handleable": true
+    },
+    {
+      "error": "MULE:CLIENT_SECURITY",
+      "parent": "MULE:SECURITY",
+      "handleable": true
+    },
+    {
+      "error": "MULE:SECURITY",
+      "parent": "MULE:ANY",
+      "handleable": true
+    },
+    {
+      "error": "OAUTH-HMAC:TOKEN_URL_FAIL",
+      "parent": "OAUTH-HMAC:OAUTH_CLIENT_SECURITY",
+      "handleable": true
+    }
+  ],
+  "modelProperties": {},
+  "types": [
+    {
+      "format": "java",
+      "type": "Object",
+      "annotations": {
+        "typeId": "org.mule.extension.oauthhmac.api.OAuthHMAC",
+        "classInformation": {
+          "classname": "org.mule.extension.oauthhmac.api.OAuthHMAC",
+          "hasDefaultConstructor": true,
+          "isInterface": false,
+          "isInstantiable": true,
+          "isAbstract": false,
+          "isFinal": false,
+          "implementedInterfaces": [],
+          "parent": "org.mule.extension.oauthhmac.api.authentication.TokenBasedAuthentication",
+          "genericTypes": [],
+          "isMap": false
+        },
+        "typeAlias": {
+          "value": "oauth-1-hmac-token"
+        }
+      },
+      "fields": [
+        {
+          "key": {
+            "name": "consumerKey",
+            "required": "true"
+          },
+          "model": {
+            "type": "String"
+          },
+          "annotations": {
+            "expressionSupport": {
+              "value": "SUPPORTED"
+            },
+            "layout": {
+              "layoutModel": {
+                "password": true,
+                "text": false,
+                "query": false,
+                "order": 1,
+                "tabName": "General"
+              }
+            },
+            "display": {
+              "displayModel": {
+                "displayName": "Consumer Key"
+              }
+            }
+          }
+        },
+        {
+          "key": {
+            "name": "consumerSecret",
+            "required": "true"
+          },
+          "model": {
+            "type": "String"
+          },
+          "annotations": {
+            "expressionSupport": {
+              "value": "SUPPORTED"
+            },
+            "layout": {
+              "layoutModel": {
+                "password": true,
+                "text": false,
+                "query": false,
+                "order": 2,
+                "tabName": "General"
+              }
+            },
+            "display": {
+              "displayModel": {
+                "displayName": "Consumer Secret"
+              }
+            }
+          }
+        },
+        {
+          "key": {
+            "name": "tokenId",
+            "required": "true"
+          },
+          "model": {
+            "type": "String"
+          },
+          "annotations": {
+            "expressionSupport": {
+              "value": "SUPPORTED"
+            },
+            "layout": {
+              "layoutModel": {
+                "password": true,
+                "text": false,
+                "query": false,
+                "order": 3,
+                "tabName": "General"
+              }
+            },
+            "display": {
+              "displayModel": {
+                "displayName": "Token ID"
+              }
+            }
+          }
+        },
+        {
+          "key": {
+            "name": "tokenSecret",
+            "required": "true"
+          },
+          "model": {
+            "type": "String"
+          },
+          "annotations": {
+            "expressionSupport": {
+              "value": "SUPPORTED"
+            },
+            "layout": {
+              "layoutModel": {
+                "password": true,
+                "text": false,
+                "query": false,
+                "order": 4,
+                "tabName": "General"
+              }
+            },
+            "display": {
+              "displayModel": {
+                "displayName": "Token Secret"
+              }
+            }
+          }
+        },
+        {
+          "key": {
+            "name": "account",
+            "required": "true"
+          },
+          "model": {
+            "type": "String"
+          },
+          "annotations": {
+            "expressionSupport": {
+              "value": "SUPPORTED"
+            },
+            "layout": {
+              "layoutModel": {
+                "password": false,
+                "text": false,
+                "query": false,
+                "order": 5,
+                "tabName": "General"
+              }
+            }
+          }
+        },
+        {
+          "key": {
+            "name": "signatureAlgorithm"
+          },
+          "model": {
+            "type": "String"
+          },
+          "annotations": {
+            "default": "HMAC-SHA256",
+            "expressionSupport": {
+              "value": "SUPPORTED"
+            },
+            "layout": {
+              "layoutModel": {
+                "password": false,
+                "text": false,
+                "query": false,
+                "order": 16,
+                "tabName": "General"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

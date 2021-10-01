@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension-documentation>
+    <configs>
+        <config name="config">
+            <description><![CDATA[Default configuration]]></description>
+            <parameters/>
+        </config>
+    </configs>
+    <connections/>
+    <extension name="OAuth 1.0 HMAC">
+        <description><![CDATA[An extension to hook oauth hmac to http extension connectors.]]></description>
+        <parameters/>
+    </extension>
+    <operations/>
+    <sources/>
+    <types>
+        <type name="org.mule.extension.oauthhmac.api.OAuthHMAC">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="consumerKey">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="consumerSecret">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="tokenId">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="tokenSecret">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="account">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="signatureAlgorithm">
+                    <description><![CDATA[]]></description>
+                </parameter>
+            </parameters>
+        </type>
+    </types>
+</extension-documentation>
